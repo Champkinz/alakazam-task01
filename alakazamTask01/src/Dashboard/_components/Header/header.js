@@ -1,0 +1,74 @@
+import React, {Component} from 'react';
+import {
+    StyleSheet,
+    View,
+    Image,
+    LayoutAnimation,
+    Dimensions,
+    ScrollView,
+    TouchableOpacity,
+    Text,TextInput
+
+} from 'react-native';
+import PropTypes from 'prop-types';
+import {Col, Row, Grid} from "react-native-easy-grid";
+import Emoji from 'react-native-emoji';
+
+const styles = StyleSheet.create({
+
+    headerStyle: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'stretch',
+        backgroundColor: '#FEFEFE',
+
+    },
+    colorTester2: {
+        backgroundColor: '#FFFFFF',
+        paddingTop:'10%',
+        paddingLeft: '3%',
+        paddingRight: '3%',
+        borderBottomLeftRadius:10,
+        borderBottomRightRadius:10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+
+
+    }
+
+});
+
+class header extends Component {
+    constructor() {
+        super();
+        this.state = {};
+    }
+
+    componentDidMount() {
+        console.log('header Component Mounted');
+
+    }
+
+    render() {
+        return (
+                <View style={styles.headerStyle}>
+                    <View style={styles.colorTester2}>
+                        <View>
+                            <Text style={{fontFamily: 'SignikaRegular', fontSize:35}}>Hey <Emoji name="wave" style={{fontSize: 30}} /></Text>
+                            <Text style={{fontFamily:'SignikaLight',fontSize:16}}>How can I help you?</Text>
+                        </View>
+                        <View>
+                            <Image
+                                style={{width: 79, height: 119,marginTop: 10 }}
+                                source={require('../../../../assets/img/logo-mascot.png')}
+                            />
+                        </View>
+                    </View>
+                </View>
+        )
+    }
+}
+
+export default header;
